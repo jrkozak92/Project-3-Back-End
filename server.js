@@ -10,10 +10,12 @@ const MONGODB_URI = process.env.MONGODB_URI;
 mongoose.connect(MONGODB_URI);
 db.on('connected', () => console.log('mongo connected: ', MONGODB_URI));
 
+app.use(express.urlencoded())
+
 app.listen(PORT, () => {
   console.log("listening on 3000...");
 })
 
-app.get('/', () => {
+app.get('/', (req, res) => {
   res.send('Hello')
 })
