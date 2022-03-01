@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
     "express": "^4.17.3",
     "mongoose": "^6.2.4"
   },
@@ -10,8 +11,10 @@
   "name": "project-3-back-end",
   "description": "",
   "version": "1.0.0",
+  "engines": {
+    "node":"16.13.1"
+  },
   "main": "server.js",
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jrkozak92/Project-3-Back-End.git"
