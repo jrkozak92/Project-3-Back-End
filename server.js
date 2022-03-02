@@ -23,4 +23,3 @@ app.use('/characters', charactersController)
 app.listen(PORT, () => {
   console.log(`listening on ${PORT}...`);
 })
-
