@@ -21,4 +21,10 @@ router.delete('/:id', (req, res) => {
   })
 })
 
+router.put('/:id', (req, res) => {
+  Character.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, updatedCharacter) => {
+    res.json(updatedCharacter)
+  })
+})
+
 module.exports = router
