@@ -28,10 +28,21 @@ app.use(
 )
 
 //controllers/routing
+const isAuthenticated = (req, res, next) => {
+  if (req.session.currentUser) {
+    return next()
+  } else {
+    res.redirect('/sessions/new')
+  }
+}
+
+app.use('/sessions', sessionsController)
+app.use('/users', usersController)
+app.use("/:all", isAuthenticated)
 app.use('/characters', charactersController)
 app.use('/episodes', episodesController)
-app.use('/users', usersController)
-app.use('/sessions', sessionsController)
+
+
 
 app.get('/', (req, res) => {
   res.redirect('/characters')
