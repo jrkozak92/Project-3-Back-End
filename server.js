@@ -20,6 +20,10 @@ app.use(cors())
 
 app.use('/characters', charactersController)
 
+app.get('/', (req, res) => {
+  res.redirect('/characters')
+})
+
 app.listen(PORT, () => {
   console.log(`listening on ${PORT}...`);
 })
