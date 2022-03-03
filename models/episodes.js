@@ -6,7 +6,8 @@ const episodesSchema = new Schema({
   title: String,
   writers: String,
   airdate: String,
-  description: String
+  description: String,
+  id: Number
 })
 
 const Episodes = mongoose.model('Episode', episodesSchema)

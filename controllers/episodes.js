@@ -4,6 +4,8 @@ const Episodes = require('../models/episodes')
 const mongoose = require('mongoose')
 const axios = require('axios')
 
+// Episodes.collection.drop() // Use this to clear the database of episodes before reseeding
+
 router.get('/', (req, res) => {
   Episodes.find({}, (err, foundEpisodes) => {
     res.json(foundEpisodes)
@@ -21,7 +23,8 @@ router.get('/seed', (req, res) => {
              title: ep.title,
              writers: ep.writers,
              airdate: ep.originalAirDate,
-             description: ep.desc
+             description: ep.desc,
+             id: ep.id
            })
          })
          usableData.map((ep) => {
