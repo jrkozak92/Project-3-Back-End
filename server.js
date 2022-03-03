@@ -5,6 +5,7 @@ const db = mongoose.connection
 const cors = require('cors')
 require('dotenv').config()
 const charactersController = require('./controllers/characters.js')
+const episodesController = require('./controllers/episodes.js')
 
 const PORT = process.env.PORT || 3003;
 const MONGODB_URI = process.env.MONGODB_URI;
@@ -17,8 +18,8 @@ app.use(express.json())
 app.use(cors())
 
 //controllers/routing
-
 app.use('/characters', charactersController)
+app.use('/episodes', episodesController)
 
 app.get('/', (req, res) => {
   res.redirect('/characters')
