@@ -32,7 +32,7 @@ const isAuthenticated = (req, res, next) => {
   if (req.session.currentUser) {
     return next()
   } else {
-    res.redirect('/sessions/new')
+    res.redirect('/')
   }
 }
 
@@ -43,10 +43,10 @@ app.use('/characters', charactersController)
 app.use('/episodes', episodesController)
 
 
-
 app.get('/', (req, res) => {
-
+  res.json({})
 })
+
 
 app.listen(PORT, () => {
   console.log(`listening on ${PORT}...`);
