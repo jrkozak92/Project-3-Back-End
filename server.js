@@ -38,14 +38,14 @@ const isAuthenticated = (req, res, next) => {
 
 app.use('/sessions', sessionsController)
 app.use('/users', usersController)
-app.use("/:all", isAuthenticated)
+// app.use("/:all", isAuthenticated)
 app.use('/characters', charactersController)
 app.use('/episodes', episodesController)
 
 
 
 app.get('/', (req, res) => {
-  res.redirect('/characters')
+
 })
 
 app.listen(PORT, () => {
