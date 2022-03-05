@@ -2,7 +2,6 @@ const express = require('express')
 const router = express.Router()
 const mongoose = require('mongoose')
 const Marker = require('../models/markers')
-const axios = require('axios')
 
 router.get('/', (req, res) => {
   Marker.find({}, (err, foundMarkers) => {
