@@ -9,6 +9,7 @@ const episodesController = require('./controllers/episodes.js')
 const usersController = require('./controllers/users.js')
 const session = require('express-session')
 const sessionsController = require('./controllers/sessions.js')
+const markersController = require('./controllers/markers.js')
 
 const PORT = process.env.PORT || 3003;
 const MONGODB_URI = process.env.MONGODB_URI;
@@ -36,6 +37,7 @@ const isAuthenticated = (req, res, next) => {
   }
 }
 
+app.use('/markers', markersController)
 app.use('/sessions', sessionsController)
 app.use('/users', usersController)
 // app.use("/:all", isAuthenticated)
